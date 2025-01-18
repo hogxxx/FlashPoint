@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\unityprojects\\git\\flashpoint\\flashpoint\\assets\\main\\maincontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\main\\maincontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\unityprojects\\git\\flashpoint\\flashpoint\\assets\\assets\\shoter\\assets\\game1\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\shoter\\assets\\game1\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,6 +47,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainControl.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Main\\MainControl.cs",
+              "RelativeDocumentMoniker": "Assets\\Main\\MainControl.cs",
+              "ToolTip": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Main\\MainControl.cs",
+              "RelativeToolTip": "Assets\\Main\\MainControl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T20:26:58.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Shoter\\Assets\\Game1\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Shoter\\Assets\\Game1\\GameManager.cs",
@@ -55,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Google.IOSResolver.dll",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Memory\\ExternalDependencyManager\\Editor\\1.2.183\\Google.IOSResolver.dll",
               "RelativeDocumentMoniker": "Assets\\Assets\\Memory\\ExternalDependencyManager\\Editor\\1.2.183\\Google.IOSResolver.dll",
@@ -66,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EnemyMove.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Shoter\\Scripts\\EnemyMove.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Shoter\\Scripts\\EnemyMove.cs",
@@ -78,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "rang.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Shoter\\Scripts\\rang.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Shoter\\Scripts\\rang.cs",
@@ -90,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PlayerMove.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Shoter\\Scripts\\PlayerMove.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Shoter\\Scripts\\PlayerMove.cs",
@@ -102,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DragHandler.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Memory\\Scripts\\DragHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Memory\\Scripts\\DragHandler.cs",
@@ -114,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Go.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Memory\\Scripts\\Go.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Memory\\Scripts\\Go.cs",
