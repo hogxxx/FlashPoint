@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\unityprojects\\git\\flashpoint\\flashpoint\\assets\\assets\\shoter\\scripts\\enemymove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\shoter\\scripts\\enemymove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\unityprojects\\git\\flashpoint\\flashpoint\\assets\\assets\\shoter\\scripts\\rang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\shoter\\scripts\\rang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\unityprojects\\git\\flashpoint\\flashpoint\\assets\\assets\\shoter\\scripts\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\assets\\assets\\shoter\\scripts\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\shoter\\scripts\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EnemyMove.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Shoter\\Scripts\\EnemyMove.cs",
+              "RelativeDocumentMoniker": "Assets\\Assets\\Shoter\\Scripts\\EnemyMove.cs",
+              "ToolTip": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Shoter\\Scripts\\EnemyMove.cs",
+              "RelativeToolTip": "Assets\\Assets\\Shoter\\Scripts\\EnemyMove.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAmwHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T18:41:19.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "rang.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Shoter\\Scripts\\rang.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Shoter\\Scripts\\rang.cs",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PlayerMove.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Shoter\\Scripts\\PlayerMove.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Shoter\\Scripts\\PlayerMove.cs",
@@ -51,12 +68,11 @@
               "RelativeToolTip": "Assets\\Assets\\Shoter\\Scripts\\PlayerMove.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAvwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T18:27:57.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-18T18:27:57.905Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DragHandler.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Memory\\Scripts\\DragHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Memory\\Scripts\\DragHandler.cs",
@@ -68,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Go.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Git\\FlashPoint\\FlashPoint\\Assets\\Assets\\Memory\\Scripts\\Go.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\Memory\\Scripts\\Go.cs",
