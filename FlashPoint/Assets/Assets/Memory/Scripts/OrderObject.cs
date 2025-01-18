@@ -794,7 +794,7 @@ public class OrderObject : MonoBehaviour
             PlayerPrefs.SetInt("Object", 0);
             PlayerPrefs.SetInt("Chooser", order.Count);
             PlayerPrefs.Save();
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Main");
         }
         else
         {

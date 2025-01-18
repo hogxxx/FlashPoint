@@ -24,100 +24,19 @@ public class Go : MonoBehaviour
     private string NotCorrectkey2;
     private string repetitions;
     private int chooser;
-    public GameObject panelInternet;
-    public Button tryRecover;
-    private Coroutine interneter;
     void Awake()
     {
         Screen.orientation = ScreenOrientation.Portrait;
-        if (!PlayerPrefs.HasKey("Class") && HasInternet())
-        {
-            SceneManager.LoadScene("Class");
-        }
-        else if (!PlayerPrefs.HasKey("Object") && HasInternet())
-        {
-            SceneManager.LoadScene("Objects");
-        }
-        else
-        {
             CreatingKeys();
             Weeker();
             Oneday();
             CheckCorrectAnswers();
             CheckNotCorrectAnswers();
             Checker();
-        }
     }
     void Start()
     {
         terms.onClick.AddListener(Terms);
-        tryRecover.onClick.AddListener(ShowPanel);
-        if(!HasInternet())
-        {
-            ShowPanel();
-        }
-        else 
-        {
-            StartChecker();
-        }
-    }
-    private bool HasInternet()
-    {
-        try
-        {
-            using (var request = new System.Net.WebClient())
-            {
-                using (request.OpenRead("http://www.google.com"))
-                {
-                    return true;
-                }
-            }
-        }
-        catch
-        {
-            return false;
-        }
-    }
-    private void ShowPanel()
-    {
-        if(!HasInternet())
-        {
-            panelInternet.SetActive(true);
-            StopChecker();
-        }
-        else
-        {
-            panelInternet.SetActive(false);
-            StartChecker();
-            
-        }
-    }
-    private IEnumerator CheckerReal()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(4f);
-            if (!HasInternet())
-            {
-                panelInternet.SetActive(true);
-                yield break;
-            }
-        }
-    }
-    private void StartChecker()
-    {
-        if (interneter == null)
-        {
-            interneter = StartCoroutine(CheckerReal());
-        }
-    }
-    private void StopChecker()
-    {
-        if (interneter != null)
-        {
-            StopCoroutine(interneter);
-            interneter = null;
-        }
     }
     private void CreatingKeys()
     {
