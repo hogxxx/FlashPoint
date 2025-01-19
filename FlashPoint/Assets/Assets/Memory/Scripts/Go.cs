@@ -27,12 +27,12 @@ public class Go : MonoBehaviour
     void Awake()
     {
         Screen.orientation = ScreenOrientation.Portrait;
-            CreatingKeys();
-            Weeker();
-            Oneday();
-            CheckCorrectAnswers();
-            CheckNotCorrectAnswers();
-            Checker();
+        CreatingKeys();
+        Weeker();
+        Oneday();
+        CheckCorrectAnswers();
+        CheckNotCorrectAnswers();
+        Checker();
     }
     void Start()
     {
