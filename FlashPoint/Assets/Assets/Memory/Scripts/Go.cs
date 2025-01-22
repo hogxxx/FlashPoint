@@ -11,11 +11,11 @@ public class Go : MonoBehaviour
     public Button remember;
     public Button terms;
 
-    private float requiretime = 30f;
-    private float requiretime1 = OrderTime.requiretime;
-    private float requiretime2 = 60f;
-    private float requiretime3 = 90f;
-    private float requiretime4 = 120f;
+    private float requiretime = 604800f;
+    private float requiretime1 = 86400f;
+    private float requiretime2 = 86400f;
+    private float requiretime3 = 172800f;
+    private float requiretime4 = 259200f;
     public TextMeshProUGUI mes;
     private string CorrectRrepetition1;
     private string Correctkey1;
@@ -29,10 +29,11 @@ public class Go : MonoBehaviour
         Screen.orientation = ScreenOrientation.Portrait;
         CreatingKeys();
         Weeker();
-        Oneday();
         CheckCorrectAnswers();
         CheckNotCorrectAnswers();
         Checker();
+        GenerateDayList();
+        Oneday();
     }
     void Start()
     {
@@ -40,6 +41,10 @@ public class Go : MonoBehaviour
     }
     private void CreatingKeys()
     {
+        if (!PlayerPrefs.HasKey("DayNum"))
+        {
+            PlayerPrefs.SetInt("DayNum", 0);
+        }
         if (!PlayerPrefs.HasKey("Updating"))
         {
             PlayerPrefs.SetInt("Updating", 0);
@@ -142,6 +147,10 @@ public class Go : MonoBehaviour
         }
         PlayerPrefs.Save();
     }
+    private void GenerateDayList()
+    {
+        Learn.Generating();
+    }
     private void Oneday()
     {
         if (PlayerPrefs.HasKey("RequireTime"))
@@ -161,6 +170,12 @@ public class Go : MonoBehaviour
                     Invoke("UpTime1", enoughtime);
                 }
             }
+        }
+        else
+        {
+            PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
+            PlayerPrefs.Save();
+            Oneday();
         }
     }
     private /*async*/ void Weeker()
@@ -194,6 +209,7 @@ public class Go : MonoBehaviour
             if (countWeek < chooser)
             {
                 PlayerPrefs.SetString("Week7", System.DateTime.Now.ToString("o"));
+                PlayerPrefs.SetInt("DayNum", 0);
                 PlayerPrefs.Save();
                 Weeker();
             }
@@ -639,7 +655,7 @@ public class Go : MonoBehaviour
     private void Checker()
     {
         int updatingValue = PlayerPrefs.GetInt("Updating");
-        bool hasRequireTime = PlayerPrefs.HasKey("RequireTime");
+        
         string value2Again1 = PlayerPrefs.GetString("2Again1");
         string value1Again = PlayerPrefs.GetString("1Again");
         string value2Agains = PlayerPrefs.GetString("2Agains");
@@ -652,8 +668,7 @@ public class Go : MonoBehaviour
         string value4_2Again = PlayerPrefs.GetString("4Again2");
         string value4_3Again = PlayerPrefs.GetString("4Again3");
         string value4_4Again = PlayerPrefs.GetString("4Again4");
-        string termsonweek = PlayerPrefs.GetString("Week0");
-        bool check = PlayerPrefs.HasKey("Week0");
+        string termsonday = PlayerPrefs.GetString("Day0");
         remember.onClick.RemoveAllListeners();
 
         if (!string.IsNullOrEmpty(value2Again1))
@@ -692,11 +707,11 @@ public class Go : MonoBehaviour
         {
             remember.onClick.AddListener(Load4);
         }
-        else if ((!hasRequireTime && updatingValue < 3 && !string.IsNullOrEmpty(termsonweek)) || (updatingValue < 3 && !check))
+        else if (updatingValue < 3 && !string.IsNullOrEmpty(termsonday))
         {
             remember.onClick.AddListener(Load1);
         }
-        else if (updatingValue > 2 || hasRequireTime || string.IsNullOrEmpty(termsonweek))
+        else if (updatingValue > 2 || string.IsNullOrEmpty(termsonday))
         {
             remember.onClick.AddListener(Message);
         }
@@ -739,8 +754,16 @@ public class Go : MonoBehaviour
     }
     public void UpTime1()
     {
-        Debug.Log("TimeEnd");
         PlayerPrefs.DeleteKey("RequireTime");
+        GenerateDayList();
+        PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
+        Oneday();
+        int num = PlayerPrefs.GetInt("DayNum");
+        num++;
+        if (num >= 6)
+        {
+            PlayerPrefs.SetInt("DayNum", num);
+        }
         PlayerPrefs.Save();
         Checker();
     }

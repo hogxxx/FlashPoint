@@ -8,8 +8,8 @@ using TMPro;
 public class Generate : MonoBehaviour
 {
     // Start is called before the first frame update
-    private List<List<string>> weeks;
     private List<string> Terms = new List<string>();
+    private List<string> TermsWeeks = new List<string>();
     private List<string> Termsagain = new List<string>();
     private List<string> Termsagain3 = new List<string>();
     private List<string> Termsagain4 = new List<string>();
@@ -43,18 +43,11 @@ public class Generate : MonoBehaviour
     private string termsagain3;
     private string termsagain4;
     private string savecheker;
-    private int chooser;
     void Start()
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
-        weeks = FileManager.LoadTerms();
-        chooser = PlayerPrefs.GetInt("Chooser");
-        if (!PlayerPrefs.HasKey("Week0") && PlayerPrefs.GetInt("Updating") < chooser)
-        {
-            Debug.Log(weeks.Count);
-            Numbers();
-        }
-        Terms = new List<string>(PlayerPrefs.GetString("Week0").Split(";"));
+        Terms = new List<string>(PlayerPrefs.GetString("Day0").Split(";"));
+        TermsWeeks = new List<string>(PlayerPrefs.GetString("Week0").Split(";"));
         Termsagain = new List<string>(PlayerPrefs.GetString("2Again1").Split(";"));
         termsagain3 = PlayerPrefs.GetString("3Again1");
         Termsagain3 = new List<string>(termsagain3.Split(";"));
@@ -80,12 +73,6 @@ public class Generate : MonoBehaviour
         worders = new List<string>(words);
         counts = words.Count;
         Generated();
-    }
-    private void Numbers()
-    {
-        string termins = string.Join(";", weeks[PlayerPrefs.GetInt("Updating")]);
-        PlayerPrefs.SetString("Week0", termins);
-        PlayerPrefs.Save();
     }
     private void Generated()
     {
@@ -216,10 +203,10 @@ public class Generate : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
             Debug.Log("Метод AddCorrect вызван.");
             AddCorrect();
             Terms.RemoveAt(0);
+            TermsWeeks.RemoveAt(0);
             ChangeList();
         }
         PlayerPrefs.Save();
@@ -253,10 +240,10 @@ public class Generate : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
             Debug.Log("Метод AddNotCorrect вызван.");
             AddNotCorrect();
             Terms.RemoveAt(0);
+            TermsWeeks.RemoveAt(0);
             ChangeList();
         }
         PlayerPrefs.Save();
@@ -316,7 +303,9 @@ public class Generate : MonoBehaviour
     private void ChangeList()
     {
         string termins = string.Join(";", Terms);
-        PlayerPrefs.SetString("Week0", termins);
+        PlayerPrefs.SetString("Day0", termins);
+        string termins1 = string.Join(";", TermsWeeks);
+        PlayerPrefs.SetString("Week0", termins1);
         PlayerPrefs.Save();
     }
     private void SaveString()

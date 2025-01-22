@@ -755,7 +755,6 @@ public class OrderObject : MonoBehaviour
     public TextMeshProUGUI Choose;
     private List<string> subjects = new List<string>();
     private int classint;
-    private float requiretime = 0f;
     void Start()
     {
         classint = PlayerPrefs.GetInt("Class");
@@ -788,8 +787,6 @@ public class OrderObject : MonoBehaviour
             {
                 Check(lesson, classint);
             }
-            requiretime = requiretime / subjects.Count;
-            OrderTime.requiretime = requiretime;
             FileManager.SaveOrder(order);
             PlayerPrefs.SetInt("Object", 0);
             PlayerPrefs.SetInt("Chooser", order.Count);
@@ -965,10 +962,6 @@ public class OrderObject : MonoBehaviour
         }
         return false;
     }
-}
-public static class OrderTime
-{
-    public static float requiretime { get; set; }
 }
 public static class DistructWords
 {
