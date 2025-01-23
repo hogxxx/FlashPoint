@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Memory/Scenes/Words3.unity
     guid: 65ed721be67c30d489517dc383b0c6b5
+  - enabled: 1
+    path: Assets/Assets/Properties/Scenes/Properties.unity
+    guid: aeb7d60386420da4d9b380d931ea5616
+  - enabled: 1
+    path: Assets/Assets/Properties/Scenes/Training.unity
+    guid: 03d368139d84ff94b940d0664391f861
   m_configObjects: {}
