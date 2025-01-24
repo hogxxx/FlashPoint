@@ -6,33 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Assets/Memory/Scenes/Class.unity
+    path: Assets/Modules/Memory/Scenes/Class.unity
     guid: e6736d35c23cb27409a9f593d8f8f68c
   - enabled: 1
-    path: Assets/Assets/Memory/Scenes/Menu.unity
+    path: Assets/Modules/Memory/Scenes/Menu.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
-    path: Assets/Assets/Memory/Scenes/Objects.unity
+    path: Assets/Modules/Memory/Scenes/Objects.unity
     guid: 5dde5c26de7d3a44c9a6d9bc771d00d3
   - enabled: 1
-    path: Assets/Assets/Memory/Scenes/Terms.unity
+    path: Assets/Modules/Memory/Scenes/Terms.unity
     guid: 6d49277db3a12a14b9908fc50a97d61c
   - enabled: 1
-    path: Assets/Assets/Memory/Scenes/Words.unity
+    path: Assets/Modules/Memory/Scenes/Words.unity
     guid: 41b7dfe6724e05c43a69a458b03aa590
   - enabled: 1
-    path: Assets/Assets/Memory/Scenes/Words1.unity
+    path: Assets/Modules/Memory/Scenes/Words1.unity
     guid: f38343c3ef73f1246ab1cc61edabe24a
   - enabled: 1
-    path: Assets/Assets/Memory/Scenes/Words2.unity
+    path: Assets/Modules/Memory/Scenes/Words2.unity
     guid: 1f0de28ebd4f4284b98e7c2ae6ac5a21
   - enabled: 1
-    path: Assets/Assets/Memory/Scenes/Words3.unity
+    path: Assets/Modules/Memory/Scenes/Words3.unity
     guid: 65ed721be67c30d489517dc383b0c6b5
   - enabled: 1
-    path: Assets/Assets/Properties/Scenes/Properties.unity
+    path: Assets/Modules/Properties/Scenes/Properties.unity
     guid: aeb7d60386420da4d9b380d931ea5616
   - enabled: 1
-    path: Assets/Assets/Properties/Scenes/Training.unity
+    path: Assets/Modules/Properties/Scenes/Training.unity
     guid: 03d368139d84ff94b940d0664391f861
   m_configObjects: {}
