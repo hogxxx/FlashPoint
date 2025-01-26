@@ -3,19 +3,27 @@
   "WorkspaceRootPath": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\usa\\unity_projects\\flashpoint\\flashpoint\\assets\\modules\\memory\\scripts\\orderobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\modules\\memory\\scripts\\orderobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\usa\\unity_projects\\flashpoint\\flashpoint\\assets\\modules\\properties\\scripts\\training.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\modules\\properties\\scripts\\training.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\usa\\unity_projects\\flashpoint\\flashpoint\\assets\\modules\\memory\\scripts\\generate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\assets\\modules\\memory\\scripts\\generate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\modules\\memory\\scripts\\generate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\usa\\unity_projects\\flashpoint\\flashpoint\\assets\\modules\\properties\\scripts\\brainproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\assets\\modules\\properties\\scripts\\brainproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\modules\\properties\\scripts\\brainproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\usa\\unity_projects\\flashpoint\\flashpoint\\assets\\modules\\memory\\scripts\\go.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|d:\\usa\\unity_projects\\flashpoint\\flashpoint\\assets\\modules\\memory\\scripts\\drophandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\modules\\memory\\scripts\\drophandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\assets\\modules\\memory\\scripts\\orderobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\modules\\memory\\scripts\\orderobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\assets\\modules\\memory\\scripts\\go.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D359B8D-9450-82A6-2CB4-19ADD9EE4417}|Assembly-CSharp.csproj|solutionrelative:assets\\modules\\memory\\scripts\\go.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,11 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "DropHandler.cs",
+              "DocumentMoniker": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Memory\\Scripts\\DropHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Modules\\Memory\\Scripts\\DropHandler.cs",
+              "ToolTip": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Memory\\Scripts\\DropHandler.cs",
+              "RelativeToolTip": "Assets\\Modules\\Memory\\Scripts\\DropHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T20:35:43.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "OrderObject.cs",
               "DocumentMoniker": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Memory\\Scripts\\OrderObject.cs",
               "RelativeDocumentMoniker": "Assets\\Modules\\Memory\\Scripts\\OrderObject.cs",
@@ -39,6 +60,19 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-24T20:21:39.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Go.cs",
+              "DocumentMoniker": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Memory\\Scripts\\Go.cs",
+              "RelativeDocumentMoniker": "Assets\\Modules\\Memory\\Scripts\\Go.cs",
+              "ToolTip": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Memory\\Scripts\\Go.cs",
+              "RelativeToolTip": "Assets\\Modules\\Memory\\Scripts\\Go.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T19:03:48.606Z",
               "EditorCaption": ""
             },
             {
@@ -56,19 +90,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Go.cs",
-              "DocumentMoniker": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Memory\\Scripts\\Go.cs",
-              "RelativeDocumentMoniker": "Assets\\Modules\\Memory\\Scripts\\Go.cs",
-              "ToolTip": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Memory\\Scripts\\Go.cs",
-              "RelativeToolTip": "Assets\\Modules\\Memory\\Scripts\\Go.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T19:03:48.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "BrainProject.cs",
               "DocumentMoniker": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Properties\\Scripts\\BrainProject.cs",
@@ -78,6 +99,19 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-24T19:03:14.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Training.cs",
+              "DocumentMoniker": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Properties\\Scripts\\Training.cs",
+              "RelativeDocumentMoniker": "Assets\\Modules\\Properties\\Scripts\\Training.cs",
+              "ToolTip": "D:\\USA\\Unity_projects\\FlashPoint\\FlashPoint\\Assets\\Modules\\Properties\\Scripts\\Training.cs",
+              "RelativeToolTip": "Assets\\Modules\\Properties\\Scripts\\Training.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEQAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T20:42:59.433Z",
               "EditorCaption": ""
             }
           ]

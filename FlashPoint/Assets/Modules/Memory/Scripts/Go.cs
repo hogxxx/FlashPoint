@@ -13,9 +13,9 @@ public class Go : MonoBehaviour
 
     private float requiretime = 604800f;
     private float requiretime1 = 86400f;
-    private float requiretime2 = 86400f;
-    private float requiretime3 = 172800f;
-    private float requiretime4 = 259200f;
+    private float requiretime2 = 604800f;
+    private float requiretime3 = 1209600f;
+    private float requiretime4 = 1814400f;
     public TextMeshProUGUI mes;
     private string CorrectRrepetition1;
     private string Correctkey1;

@@ -23,6 +23,7 @@ public class DropHandler : MonoBehaviour, IDropHandler
         }
         var generate = FindObjectOfType<Generate>();
         var generate1 = FindObjectOfType<Generate1>();
+        var training = FindObjectOfType<Training>();
         if (generate != null)
         {
             generate.Check();
@@ -30,6 +31,10 @@ public class DropHandler : MonoBehaviour, IDropHandler
         else if(generate1 != null)
         {
             generate1.Check();
+        }
+        else if(training != null)
+        {
+            training.Check();
         }
         else
         {
