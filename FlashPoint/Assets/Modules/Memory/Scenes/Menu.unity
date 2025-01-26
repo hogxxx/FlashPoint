@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -219,7 +218,7 @@ RectTransform:
   m_GameObject: {fileID: 284091266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.2605977, y: 6.786331, z: 5.682189}
+  m_LocalScale: {x: 4.0516596, y: 5.226764, z: 4.376365}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 985814795}
@@ -228,7 +227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 158}
+  m_AnchoredPosition: {x: 0, y: 273}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &284091268
@@ -398,8 +397,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37
-  m_fontSizeBase: 37
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -790,8 +789,6 @@ MonoBehaviour:
   remember: {fileID: 1706149500}
   terms: {fileID: 284091268}
   mes: {fileID: 799172606}
-  panelInternet: {fileID: 1785002042}
-  tryRecover: {fileID: 1953451779}
 --- !u!1 &985814794
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,8 +874,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31
-  m_fontSizeBase: 31
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1090,7 +1087,7 @@ RectTransform:
   m_GameObject: {fileID: 1027213108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.77019, y: 0.77019, z: 0.77019}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1735008904}
@@ -1228,7 +1225,7 @@ RectTransform:
   m_GameObject: {fileID: 1252442840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.64645, y: 0.64645, z: 0.64645}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1735008904}
@@ -1236,7 +1233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.810364, y: -890}
+  m_AnchoredPosition: {x: 35.810364, y: -802}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252442842
@@ -1263,8 +1260,8 @@ MonoBehaviour:
     \u043F\u043E\u0447\u0438\u043D\u0430\u0442\u0438 \u043F\u043E\u0432\u0442\u043E\u0440\u044E\u0432\u0430\u0442\u0438
     \u043D\u0430\u0442\u0438\u0441\u043A\u0430\u0439 \u0441\u0442\u0430\u0440\u0442."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9a5078eb9e978e444828a5be3d6ac13c, type: 2}
-  m_sharedMaterial: {fileID: -699033361289227385, guid: 9a5078eb9e978e444828a5be3d6ac13c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1636,7 +1633,7 @@ RectTransform:
   m_GameObject: {fileID: 1706149498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7532167, y: 10.645226, z: 5.682189}
+  m_LocalScale: {x: 4.6513467, y: 8.606425, z: 4.5939226}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 357187772}
@@ -1645,7 +1642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -372.5}
+  m_AnchoredPosition: {x: 0, y: -293}
   m_SizeDelta: {x: 138.2, y: 18.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706149500
@@ -1806,6 +1803,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
