@@ -31,9 +31,9 @@ public class Go : MonoBehaviour
         Weeker();
         CheckCorrectAnswers();
         CheckNotCorrectAnswers();
-        Checker();
         GenerateDayList();
         Oneday();
+        Checker();
     }
     void Start()
     {
