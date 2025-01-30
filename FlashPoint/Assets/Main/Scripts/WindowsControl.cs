@@ -25,14 +25,30 @@ public class WindowsControl : MonoBehaviour
     private int Day;
     private int Prioritet;
 
+
+
     private void Start()
     {
-        Register.SetActive(false);
-        AwakePlash.SetActive(true);
-        MainMenu.SetActive(false);
-        ChosePrioritet.SetActive(false);
-        MissionMenu.SetActive(false);
-        ProfileMenu.SetActive(false);
+        if (Zov.zovv == 0)
+        {
+            Register.SetActive(false);
+            AwakePlash.SetActive(true);
+            MainMenu.SetActive(false);
+            ChosePrioritet.SetActive(false);
+            MissionMenu.SetActive(false);
+            ProfileMenu.SetActive(false);
+            Zov.zovvv(1);
+        }
+        else
+        {
+            Register.SetActive(false);
+            AwakePlash.SetActive(false);
+            MainMenu.SetActive(true);
+            ChosePrioritet.SetActive(false);
+            MissionMenu.SetActive(false);
+            ProfileMenu.SetActive(false);
+        }
+
         AwakeAplyButton.onClick.AddListener(AwakeAply);
         RegisterAplyButton.onClick.AddListener(RegisterAply);
         for (int i = 0; i < DayButtons.Length; i++)
@@ -48,6 +64,7 @@ public class WindowsControl : MonoBehaviour
         MissionAplyButton.onClick.AddListener(MissionAply);
         ProfileEnterButton.onClick.AddListener(ProfileEnter);
         ProfileExitButton.onClick.AddListener(ProfileExit);
+        Screen.orientation = ScreenOrientation.Portrait;
     }
 
     void AwakeAply()
@@ -76,7 +93,7 @@ public class WindowsControl : MonoBehaviour
     }
     void MissionAply()
     {
-        SceneManager.LoadScene(Prioritet);
+        SceneManager.LoadScene(Prioritet + 1);
     }
     void ProfileEnter()
     {
@@ -89,4 +106,12 @@ public class WindowsControl : MonoBehaviour
         ProfileMenu.SetActive(false);
     }
 
+}
+public static class Zov
+{
+    public static int zovv = 0;
+    public static void zovvv(int zov)
+    {
+        zovv = zov;
+    }
 }
