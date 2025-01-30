@@ -8,6 +8,7 @@ TagManager:
   - bullet
   - Select
   - TruePhoto
+  - TruePhoto1
   layers:
   - Default
   - TransparentFX
