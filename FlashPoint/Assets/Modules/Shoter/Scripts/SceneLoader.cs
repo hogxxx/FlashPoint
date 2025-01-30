@@ -73,8 +73,8 @@ public class SceneLoader : MonoBehaviour
         start.onClick.AddListener(startv);
         exit.onClick.AddListener(exitv);
         rang = (int)MyClass.rang;
-        
-        
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+
     }
     private void Update()
     {
@@ -102,7 +102,7 @@ public class SceneLoader : MonoBehaviour
 
     void playv()
     {
-        SceneManager.LoadScene(rang + 1);
+        SceneManager.LoadScene(rang + 5);
     }
     void updatev()
     {
