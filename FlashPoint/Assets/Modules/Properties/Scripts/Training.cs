@@ -10,8 +10,7 @@ using Unity.VisualScripting;
 public class Training : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Image MainPhoto;
-    public List<Image> blocks = new List<Image>(5);
+    public List<Image> blocks = new List<Image>(6);
     private Vector2[] positions =
     {
         new Vector2(-8.468933f, 1.769623f),
@@ -19,9 +18,10 @@ public class Training : MonoBehaviour
         new Vector2(8.549622f, -1.878525f),
         new Vector2(-8.468933f, -1.878525f),
         new Vector2(-4.302216f, -1.878525f),
+        new Vector2(4.302216f, -1.878525f),
     };
     public List<Sprite> sprites = new List<Sprite>();
-    public List<GameObject> dropareas = new List<GameObject>(3);
+    public List<GameObject> dropareas = new List<GameObject>(4);
     public GameObject panel;
     public TextMeshProUGUI message;
     public TextMeshProUGUI correctOrder;
@@ -42,31 +42,30 @@ public class Training : MonoBehaviour
         if (count == 6)
         {
             List<Sprite> sprites1 = sprites.GetRange(0, count);
-            MainPhoto.sprite = sprites1[0];
             MainPhoto2.sprite = sprites1[0];
             ImageT1.sprite = sprites1[1];
             ImageT2.sprite = sprites1[2];
             ImageT3.sprite = sprites1[3];
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
-                blocks[i].sprite = sprites1[i + 1];
+                blocks[i].sprite = sprites1[i];
                 int random = Random.Range(0, spawnPos.Count);
                 RectTransform pos = blocks[i].GetComponent<RectTransform>();
                 pos.anchoredPosition = spawnPos[random];
+                blocks[i].AddComponent<DragHandler>();
                 spawnPos.RemoveAt(random);
             }
         }
         else
         {
             List<Sprite> sprites2 = sprites.GetRange(count, count + 6);
-            MainPhoto.sprite = sprites2[0];
             MainPhoto2.sprite = sprites2[0];
             ImageT1.sprite = sprites2[1];
             ImageT2.sprite = sprites2[2];
             ImageT3.sprite = sprites2[3];
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
-                blocks[i].sprite = sprites2[i + 1];
+                blocks[i].sprite = sprites2[i];
                 int random = Random.Range(0, spawnPos.Count);
                 RectTransform pos = blocks[i].GetComponent<RectTransform>();
                 pos.anchoredPosition = spawnPos[random];
@@ -82,24 +81,40 @@ public class Training : MonoBehaviour
         foreach(var image1 in blocksCopy)
         {
             RectTransform pos1 = image1.GetComponent<RectTransform>();
-            foreach(var drop in dropareas)
+            foreach (var drop in dropareas)
             {
                 RectTransform pos2 = drop.GetComponent<RectTransform>();
                 if (RectOverLaps(pos1, pos2))
                 {
                     num++;
-                    if (!image1.CompareTag("TruePhoto"))
+                    if (image1.CompareTag("TruePhoto") || image1.CompareTag("TruePhoto1"))
+                    {
+                        correct = true;
+                    }
+                    else
                     {
                         correct = false;
                     }
                 }
             }
         }
-        if (correct && num == 3)
+        foreach (var image1 in blocksCopy)
+        {
+            RectTransform pos1 = image1.GetComponent<RectTransform>();
+            RectTransform real = dropareas[0].GetComponent<RectTransform>();
+            if (RectOverLaps(real, pos1))
+            {
+                if (!image1.CompareTag("TruePhoto1"))
+                {
+                    correct = false;
+                }
+            }
+        }
+        if (correct && num == 4)
         {
             Correct();
         }
-        else if (num == 3)
+        else if (num == 4)
         {
             NotCorrect();
         }

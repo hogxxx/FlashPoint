@@ -18,7 +18,7 @@ public class DropHandler : MonoBehaviour, IDropHandler
                 {
                     previousarea.GetComponent<DropHandler>().ClearArea();
                 }
-                occupied = true;
+                occupied = false;
                 previousarea = gameObject;
         }
         var generate = FindObjectOfType<Generate>();
@@ -46,6 +46,5 @@ public class DropHandler : MonoBehaviour, IDropHandler
         occupied = false;
         previousarea = null;
     }
-
 }
 
