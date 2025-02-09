@@ -80,4 +80,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Modules/Properties/Scenes/Training.unity
     guid: 03d368139d84ff94b940d0664391f861
+  - enabled: 1
+    path: Assets/Modules/Quizez/Scenes/Quiz.unity
+    guid: 42ba29869b2c8da4194cfc84f31fbaca
+  - enabled: 1
+    path: Assets/Modules/Quizez/Scenes/Quizer.unity
+    guid: d3f13ce5fc6fd7549860b86669faeb68
   m_configObjects: {}

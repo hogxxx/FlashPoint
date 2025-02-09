@@ -796,7 +796,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 962988527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a70c1116230af1c459e6f1eddfe26e50, type: 3}
+  m_Script: {fileID: 11500000, guid: 13d98b7bf6dd7b4409d245015f137aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 1268681393}
@@ -995,9 +995,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u0438\u0441\u0442\u0430\u0432\u043B\u044F\u0439 \u043A\u043E\u0440\u0435\u043A\u0442\u043D\u043E
-    \u0432\u043B\u0430\u0441\u0442\u0438\u0432\u043E\u0441\u0442\u0456 \u0442\u0430
-    \u043F\u0440\u043E\u043A\u0430\u0447\u0443\u0439 \u0441\u0432\u0456\u0439 \u0440\u043E\u0437\u0443\u043C!"
+  m_text: "\u0414\u0456\u0437\u043D\u0430\u0439\u0441\u044F \u0446\u0456\u043A\u0430\u0432\u0438\u0439
+    \u0444\u0430\u043A\u0442 \u0430\u0431\u043E \u043F\u0435\u0440\u0435\u0432\u0456\u0440
+    \u0441\u0432\u043E\u0457 \u0437\u043D\u0430\u043D\u043D\u044F!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -468.48276, y: -214.30603, z: -395.2337, w: 0.71901906}
+  m_margin: {x: -468.48276, y: -214.30603, z: -395.2337, w: 83.99369}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
