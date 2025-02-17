@@ -60,9 +60,6 @@ EditorBuildSettings:
     path: Assets/Modules/Memory/Scenes/Class.unity
     guid: e6736d35c23cb27409a9f593d8f8f68c
   - enabled: 1
-    path: Assets/Modules/Memory/Scenes/Objects.unity
-    guid: 5dde5c26de7d3a44c9a6d9bc771d00d3
-  - enabled: 1
     path: Assets/Modules/Memory/Scenes/Terms.unity
     guid: 6d49277db3a12a14b9908fc50a97d61c
   - enabled: 1

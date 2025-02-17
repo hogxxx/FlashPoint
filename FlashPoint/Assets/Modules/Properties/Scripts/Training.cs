@@ -144,8 +144,6 @@ public class Training : MonoBehaviour
         message.color = new Color(53f / 255f, 255f / 255f, 0f / 255f);
         menu.onClick.RemoveAllListeners();
         menu.onClick.AddListener(Back);
-        PlayerPrefs.SetString("Day1", System.DateTime.Now.ToString("o"));
-        PlayerPrefs.Save();
     }
     private void NotCorrect()
     {
@@ -159,8 +157,6 @@ public class Training : MonoBehaviour
         ImageT3.gameObject.SetActive(true);
         menu.onClick.RemoveAllListeners();
         menu.onClick.AddListener(Back);
-        PlayerPrefs.SetString("Day1", System.DateTime.Now.ToString("o"));
-        PlayerPrefs.Save();
     }
     private void Back()
     {

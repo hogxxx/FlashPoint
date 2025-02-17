@@ -93,7 +93,6 @@ public class Generate1 : MonoBehaviour
             Term = Termsagain4[0];
         }
         words = new List<string>(sentence.Split(" "));
-        OrderObject.CheckTerm(words[0]);
         distractingWords = DistructWords.distructwords;
         Debug.Log(distractingWords.Count);
         worders = new List<string>(words);

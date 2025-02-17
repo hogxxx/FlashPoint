@@ -9,7 +9,6 @@ public class Generate : MonoBehaviour
 {
     // Start is called before the first frame update
     private List<string> Terms = new List<string>();
-    private List<string> TermsWeeks = new List<string>();
     private List<string> Termsagain = new List<string>();
     private List<string> Termsagain3 = new List<string>();
     private List<string> Termsagain4 = new List<string>();
@@ -47,7 +46,6 @@ public class Generate : MonoBehaviour
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         Terms = new List<string>(PlayerPrefs.GetString("Day0").Split(";"));
-        TermsWeeks = new List<string>(PlayerPrefs.GetString("Week0").Split(";"));
         Termsagain = new List<string>(PlayerPrefs.GetString("2Again1").Split(";"));
         termsagain3 = PlayerPrefs.GetString("3Again1");
         Termsagain3 = new List<string>(termsagain3.Split(";"));
@@ -206,7 +204,6 @@ public class Generate : MonoBehaviour
             Debug.Log("Метод AddCorrect вызван.");
             AddCorrect();
             Terms.RemoveAt(0);
-            TermsWeeks.RemoveAt(0);
             ChangeList();
         }
         PlayerPrefs.Save();
@@ -243,7 +240,6 @@ public class Generate : MonoBehaviour
             Debug.Log("Метод AddNotCorrect вызван.");
             AddNotCorrect();
             Terms.RemoveAt(0);
-            TermsWeeks.RemoveAt(0);
             ChangeList();
         }
         PlayerPrefs.Save();
@@ -304,8 +300,6 @@ public class Generate : MonoBehaviour
     {
         string termins = string.Join(";", Terms);
         PlayerPrefs.SetString("Day0", termins);
-        string termins1 = string.Join(";", TermsWeeks);
-        PlayerPrefs.SetString("Week0", termins1);
         PlayerPrefs.Save();
     }
     private void SaveString()

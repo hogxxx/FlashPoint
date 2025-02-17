@@ -7,7 +7,7 @@ using System;
 public class Learn : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static List<List<string>> weeks;
+    public static List<string> days;
     public TextMeshProUGUI main;
     public TextMeshProUGUI words;
     public RectTransform wordsarea;
@@ -17,13 +17,9 @@ public class Learn : MonoBehaviour
     public static List<string> termsDay = new List<string>{""};
     public static int updatevalue;
     public static int chooser;
-    public static List<int> days = new List<int>(new int[7]);
-    private float requiretime1 = 86400f;
     public static string week;
     void Start()
     {
-        Generating();
-        Oneday();
         string terms = PlayerPrefs.GetString("Terms");
         string[] spliter = terms.Split(";");
         if (spliter.Length > 1)
@@ -67,103 +63,17 @@ public class Learn : MonoBehaviour
     }
     public static void Generating()
     {
-        weeks = FileManager.LoadTerms();
-        updatevalue = PlayerPrefs.GetInt("Updating");
-        chooser = PlayerPrefs.GetInt("Chooser");
-        if (!PlayerPrefs.HasKey("Week0") && updatevalue < chooser)
+        days = FileManager.LoadTerms();
+        if (days.Count != 0)
         {
-            Numbers();
-            terms1 = new List<string>(PlayerPrefs.GetString("Week0").Split(";"));
-            int termers = 0;
-            foreach (var term in terms1)
-            {
-                termers++;
-            }
-            int count1 = termers / 6;
-            int count2 = termers % 6;
-            if (count1 != 0 && count2 != 0)
-            {
-                for (int i = 0; i < 6; i++)
-                {
-                    days[i] = count1;
-                    if (count2 != 0)
-                    {
-                        days[i] += 1;
-                        count2--;
-                    }
-                }
-                days[6] = 0;
-            }
-            else if (count1 == 0)
-            {
-                for (int i = 0; i < days.Count; i++)
-                {
-                    if (count2 != 0)
-                    {
-                        days[i] = 1;
-                        count2--;
-                    }
-                    else
-                    {
-                        days[i] = 0;
-                    }
-                }
-            }
-            else if (count2 == 0)
-            {
-                for (int i = 0; i < 6; i++)
-                {
-                    days[i] = count1;
-                }
-                days[6] = 0;
-            }
-        }
-        week = PlayerPrefs.GetString("Week0");
-        if (!string.IsNullOrEmpty(week) && !PlayerPrefs.HasKey("RequireTime"))
-        {
-            terms1 = new List<string>(week.Split(";"));
-            int num = PlayerPrefs.GetInt("DayNum");
-            if (num == 0)
-            {
-                int num1 = days[num];
-                if (num1 != 0)
-                {
-                    termsDay = terms1.Take(num1).ToList();
-                    PlayerPrefs.SetInt("LastNum", days[num]);
-                }
-            }
-            else
-            {
-                int numlast = PlayerPrefs.GetInt("LastNum");
-                int num1 = days[num];
-                if (num1 != 0)
-                {
-                    termsDay = terms1.GetRange(numlast, num1);
-                    PlayerPrefs.SetInt("LastNum", days[num]);
-                }
-            }
-            if (termsDay.Count == 1)
-            {
-                string term = termsDay[0];
-                PlayerPrefs.SetString("Day0", term);
-            }
-            else
-            {
-                string termins = string.Join(";", termsDay);
-                PlayerPrefs.SetString("Day0", termins);
-            }
+            PlayerPrefs.SetString("Day0", days[0]);
             PlayerPrefs.Save();
+            termsDay = days;
         }
         if (termsDay.Contains(""))
         {
             termsDay.Remove("");
         }
-    }
-    public static void Numbers()
-    {
-        string termins = string.Join(";", weeks[updatevalue]);
-        PlayerPrefs.SetString("Week0", termins);
-        PlayerPrefs.Save();
     }
     private void Loads()
     {
@@ -214,46 +124,5 @@ public class Learn : MonoBehaviour
                 content.sizeDelta = new Vector2(content.sizeDelta.x, newheight);
             }
         }
-    }
-    private void Oneday()
-    {
-        if (PlayerPrefs.HasKey("RequireTime"))
-        {
-            string timers = PlayerPrefs.GetString("RequireTime");
-            DateTime lefttime;
-            if (DateTime.TryParse(timers, null, System.Globalization.DateTimeStyles.RoundtripKind, out lefttime))
-            {
-                TimeSpan usedtimes = DateTime.Now - lefttime;
-                if (usedtimes.TotalSeconds >= requiretime1)
-                {
-                    UpTime1();
-                }
-                else
-                {
-                    float enoughtime = (float)(requiretime1 - usedtimes.TotalSeconds);
-                    Invoke("UpTime1", enoughtime);
-                }
-            }
-        }
-        else if(updatevalue < chooser)
-        {
-            PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
-            PlayerPrefs.Save();
-            Oneday();
-        }
-    }
-    public void UpTime1()
-    {
-        PlayerPrefs.DeleteKey("RequireTime");
-        Generating();
-        PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
-        Oneday();
-        int num = PlayerPrefs.GetInt("DayNum");
-        num++;
-        if (num >= 6)
-        {
-            PlayerPrefs.SetInt("DayNum", num);
-        }
-        PlayerPrefs.Save();
     }
 }

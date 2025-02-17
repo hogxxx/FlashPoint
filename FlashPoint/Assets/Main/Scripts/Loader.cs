@@ -12,9 +12,5 @@ public class MainControl : MonoBehaviour
         {
             SceneManager.LoadScene("Class");
         }
-        else if (!PlayerPrefs.HasKey("Object"))
-        {
-            SceneManager.LoadScene("Objects");
-        }
     }
 }

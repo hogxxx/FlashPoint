@@ -10,55 +10,27 @@ using UnityEngine.UI;
 
 public class QuizStart : MonoBehaviour
 {
-    private float requiretime1 = 86400f;
     public Button start;
     public TextMeshProUGUI mes;
     void Start()
     {
         Screen.orientation = ScreenOrientation.Portrait;
-        CheckDayOne();
-        CreateCount();
+        UpTime(); /*Change Place !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
         Checker();
     }
-    private void CheckDayOne()
+    
+    public static void UpTime()
     {
-        if (PlayerPrefs.HasKey("DAY1"))
-        {
-            string fixtime = PlayerPrefs.GetString("DAY1");
-            DateTime leftTime;
-            if (DateTime.TryParse(fixtime, null, System.Globalization.DateTimeStyles.RoundtripKind, out leftTime))
-            {
-                TimeSpan needTime = DateTime.Now - leftTime;
-                if (needTime.TotalSeconds >= requiretime1)
-                {
-                    UpTime();
-                }
-                else
-                {
-                    float enoughTime = (float)(requiretime1 - needTime.TotalSeconds);
-                    Invoke("UpTime", enoughTime);
-                }
-            }
-        }
-    }
-    private void UpTime()
-    {
-        PlayerPrefs.DeleteKey("DAY1");
-        PlayerPrefs.Save();
+        CountDay1.CheckNum1();
         int day1 = CountDay1.LoadInter1();
         day1 += 1;
         CountDay1.SaveInter1(day1);
     }
-    private void CreateCount()
-    {
-        CountDay1.CheckNum1();
-    }
     private void Checker()
     {
-        bool check = !PlayerPrefs.HasKey("DAY1");
         int count = CountDay1.LoadInter1();
         start.onClick.RemoveAllListeners();
-        if (check && count < 10)
+        if (count < 31)
         {
             start.onClick.AddListener(Starter);
         }
@@ -94,7 +66,7 @@ public static class CountDay1
         if (!File.Exists(filepath))
         {
             InitializeFile();
-            SaveInter1(0);
+            SaveInter1(-1);
         }
     }
     public static void SaveInter1(int num)

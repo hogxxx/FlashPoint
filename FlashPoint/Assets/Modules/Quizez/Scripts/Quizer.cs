@@ -120,8 +120,6 @@ public class Quizer : MonoBehaviour
         fact.text = facts[num];
         menu.onClick.RemoveAllListeners();
         menu.onClick.AddListener(Back);
-        PlayerPrefs.SetString("DAY1", System.DateTime.Now.ToString("o"));
-        PlayerPrefs.Save();
     }
     private void NotCorrect()
     {
@@ -132,8 +130,6 @@ public class Quizer : MonoBehaviour
         fact.text = facts[num];
         menu.onClick.RemoveAllListeners();
         menu.onClick.AddListener(Back);
-        PlayerPrefs.SetString("DAY1", System.DateTime.Now.ToString("o"));
-        PlayerPrefs.Save();
     }
     private void Back()
     {
