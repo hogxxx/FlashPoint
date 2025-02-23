@@ -24,7 +24,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         float dragspeed = 0.01f;
         Vector2 newpos = rectTransform.anchoredPosition + evendata.delta * dragspeed;
-        newpos.x = Mathf.Clamp(newpos.x, -8f, 8f);
+        newpos.x = Mathf.Clamp(newpos.x, -8f, 8.73f);
         newpos.y = Mathf.Clamp(newpos.y, -3.5f, 4f);
         rectTransform.anchoredPosition = newpos;
     }

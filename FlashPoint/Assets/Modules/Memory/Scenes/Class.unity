@@ -1464,6 +1464,13 @@ MonoBehaviour:
   group: {fileID: 238885058}
   Choose: {fileID: 1385209038}
   ready: {fileID: 1485064144}
+  scheme1:
+  - {fileID: 21300000, guid: e95f8560fe5189d4c96523c5a43b4656, type: 3}
+  - {fileID: 21300000, guid: 36f2763d96f35944daff8951ebdedc95, type: 3}
+  - {fileID: 21300000, guid: d797d310f9681a44eaaad6e495f6582f, type: 3}
+  - {fileID: 21300000, guid: 2e8685171404ef649945cdeef3c7d100, type: 3}
+  - {fileID: 21300000, guid: 64c858edd59cd524e884a4160c1e5363, type: 3}
+  - {fileID: 21300000, guid: 24405360737326d4182ca1554c8ebeb4, type: 3}
 --- !u!1 &967129380
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,11 +27,27 @@ public class Go : MonoBehaviour
         CheckCorrectAnswers();
         CheckNotCorrectAnswers();
         UpTime1(); /* Need Change Place!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+        UpScheme(); /* Need Change Place!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
         Checker();
     }
     void Start()
     {
         terms.onClick.AddListener(Terms);
+    }
+    public static void UpScheme()
+    {
+       OrderClass.UpdateScheme();
+       int num = PlayerPrefs.GetInt("NumScheme");
+       if (num == 1)
+       {
+            PlayerPrefs.SetInt("RealS", 0);
+       }
+       else
+       {
+            PlayerPrefs.SetInt("RealS", 1);
+            Learn.AddScheme();
+        }
+       PlayerPrefs.Save();
     }
     public static void UpTime1()
     {
@@ -606,9 +622,13 @@ public class Go : MonoBehaviour
         string value4_3Again = PlayerPrefs.GetString("4Again3");
         string value4_4Again = PlayerPrefs.GetString("4Again4");
         string termsonday = PlayerPrefs.GetString("Day0");
+        int NeedScheme = PlayerPrefs.GetInt("RealS");
         remember.onClick.RemoveAllListeners();
-
-        if (!string.IsNullOrEmpty(value2Again1))
+        if (NeedScheme == 1)
+        {
+            remember.onClick.AddListener(Load1);
+        }
+        else if (!string.IsNullOrEmpty(value2Again1))
         {
             remember.onClick.AddListener(Load1);
         }

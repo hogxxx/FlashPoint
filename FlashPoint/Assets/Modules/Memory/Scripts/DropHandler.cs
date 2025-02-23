@@ -24,6 +24,7 @@ public class DropHandler : MonoBehaviour, IDropHandler
         var generate = FindObjectOfType<Generate>();
         var generate1 = FindObjectOfType<Generate1>();
         var training = FindObjectOfType<Training>();
+        var schemes = FindObjectOfType<CreateScheme>();
         if (generate != null)
         {
             generate.Check();
@@ -36,9 +37,13 @@ public class DropHandler : MonoBehaviour, IDropHandler
         {
             training.Check();
         }
+        else if (schemes != null)
+        {
+            schemes.Check();
+        }
         else
         {
-            Debug.Log("Ни Generate, ни Generate1 не найдены в сцене");
+            Debug.Log("Ничего не найдено");
         }
     }
     public void ClearArea()

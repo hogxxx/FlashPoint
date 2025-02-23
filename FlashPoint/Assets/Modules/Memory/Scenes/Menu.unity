@@ -847,7 +847,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0422\u0435\u0440\u043C\u0456\u043D\u0438"
+  m_text: "\u0417\u0430\u0432\u0434\u0430\u043D\u043D\u044F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1095,7 +1095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.810364, y: 869}
+  m_AnchoredPosition: {x: 35.810364, y: 884}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1027213110
@@ -1120,8 +1120,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0422\u0438 \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0448 \u0442\u0430
     \u0437\u0430\u043F\u0430\u043C'\u044F\u0442\u0430\u0454\u0448 \u043D\u043E\u0432\u0456
-    \u0442\u0435\u0440\u043C\u0456\u043D\u0438 \u0437\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u0456
-    \u0432 \u043F\u0443\u043D\u043A\u0442\u0456 \u0442\u0435\u0440\u043C\u0456\u043D\u0438."
+    \u0442\u0435\u0440\u043C\u0456\u043D\u0438,\u0430 \u0442\u0430\u043A\u043E\u0436
+    \u0437\u0430\u043F\u043E\u0432\u043D\u0438\u0448 \u0441\u0445\u0435\u043C\u0438.
+    \u041F\u043E\u0434\u0438\u0432\u0438\u0442\u044C \u0437\u0430\u0432\u0434\u0430\u043D\u043D\u044F
+    \u043C\u043E\u0436\u0435\u0448 \u0432 \u043F\u0443\u043D\u043A\u0442\u0456 \u0417\u0430\u0432\u0434\u0430\u043D\u043D\u044F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1184,7 +1186,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -468.48276, y: -214.30603, z: -378.77332, w: -249.19324}
+  m_margin: {x: -468.48276, y: -214.30603, z: -378.77332, w: -559.2968}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

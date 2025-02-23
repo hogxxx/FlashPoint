@@ -15,8 +15,6 @@ public class Learn : MonoBehaviour
     public static List<string> terms1 = new List<string>();
     private List<string> terms2 = new List<string>();
     public static List<string> termsDay = new List<string>{""};
-    public static int updatevalue;
-    public static int chooser;
     public static string week;
     void Start()
     {
@@ -24,27 +22,34 @@ public class Learn : MonoBehaviour
         string[] spliter = terms.Split(";");
         if (spliter.Length > 1)
         {
-            terms2 = new List<string>(terms.Split(";"));
+            List<string> orderTerms = new List<string>(terms.Split(";"));
+            foreach (var term in orderTerms)
+            {
+                terms2.Add("Повтори: " + term);
+            }
         }
         else if (!string.IsNullOrEmpty(terms) && spliter.Length == 1)
         {
             terms2 = new List<string>()
             {
-                terms
+                "Повтори: " + terms
             };
         }
         string terms1 = PlayerPrefs.GetString("Day0");
-        Debug.Log(terms1);
         string[] spliter1 = terms1.Split(";");
         if (spliter1.Length > 1)
         {
-            termsDay = new List<string>(terms1.Split(";"));
+            List<string> orderTerms = new List<string>(terms1.Split(";"));
+            foreach (var term in orderTerms)
+            {
+                termsDay.Add("Повтори: " + term);
+            }
         }
         else if (!string.IsNullOrEmpty(terms) && spliter.Length == 1)
         {
             termsDay = new List<string>()
             {
-                terms1
+                "Повтори: " + terms1
             };
         }
         else if(string.IsNullOrEmpty(terms1))
@@ -58,7 +63,6 @@ public class Learn : MonoBehaviour
                 termsDay.Add(term);
             }
         }
-        Debug.Log(string.Join(";", termsDay));
         Loads();
     }
     public static void Generating()
@@ -68,16 +72,23 @@ public class Learn : MonoBehaviour
         {
             PlayerPrefs.SetString("Day0", days[0]);
             PlayerPrefs.Save();
-            termsDay = days;
+            foreach (var day in days)
+            {
+                termsDay.Add("Повтори: " + day);
+            }
         }
         if (termsDay.Contains(""))
         {
             termsDay.Remove("");
         }
     }
+    public static void AddScheme()
+    {
+        termsDay.Insert(0, "Заповни схему це");
+    }
     private void Loads()
     {
-        if (updatevalue >= chooser || termsDay.Count == 0 || termsDay.Contains(""))
+        if (termsDay.Count == 0 || termsDay.Contains(""))
         {
             main.gameObject.SetActive(false);
             words.text = "Повторень на день немає!";
