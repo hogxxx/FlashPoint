@@ -207,7 +207,7 @@ public class Generate : MonoBehaviour
             ChangeList();
         }
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main");
     }
     private void Add()
     {
@@ -243,7 +243,7 @@ public class Generate : MonoBehaviour
             ChangeList();
         }
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main");
     }
 
     private void AddCorrect()

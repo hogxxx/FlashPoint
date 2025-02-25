@@ -160,6 +160,6 @@ public class Training : MonoBehaviour
     }
     private void Back()
     {
-        SceneManager.LoadScene("Properties");
+        SceneManager.LoadScene("Main");
     }
 }

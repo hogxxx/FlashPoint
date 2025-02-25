@@ -9,7 +9,6 @@ using TMPro;
 public class Go : MonoBehaviour
 {
     public Button remember;
-    public Button terms;
     private float requiretime2 = 604800f;
     private float requiretime3 = 1209600f;
     private float requiretime4 = 1814400f;
@@ -30,10 +29,6 @@ public class Go : MonoBehaviour
         UpScheme(); /* Need Change Place!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
         Checker();
     }
-    void Start()
-    {
-        terms.onClick.AddListener(Terms);
-    }
     public static void UpScheme()
     {
        OrderClass.UpdateScheme();
@@ -41,7 +36,8 @@ public class Go : MonoBehaviour
        if (num == 1)
        {
             PlayerPrefs.SetInt("RealS", 0);
-       }
+            Learn.DelScheme();
+        }
        else
        {
             PlayerPrefs.SetInt("RealS", 1);
@@ -57,9 +53,9 @@ public class Go : MonoBehaviour
         if (num <= 29)
         {
             PlayerPrefs.SetInt("DayNum", num);
+            PlayerPrefs.Save();
             OrderClass.LoadData(num);
         }
-        PlayerPrefs.Save();
         Learn.Generating();
     }
     private static void CheckNum()

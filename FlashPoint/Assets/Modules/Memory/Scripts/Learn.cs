@@ -74,7 +74,10 @@ public class Learn : MonoBehaviour
             PlayerPrefs.Save();
             foreach (var day in days)
             {
-                termsDay.Add("Повтори: " + day);
+                if (!termsDay.Contains("Повтори: " + day))
+                {
+                    termsDay.Add("Повтори: " + day);
+                }
             }
         }
         if (termsDay.Contains(""))
@@ -85,6 +88,13 @@ public class Learn : MonoBehaviour
     public static void AddScheme()
     {
         termsDay.Insert(0, "Заповни схему це");
+    }
+    public static void DelScheme()
+    {
+        if (termsDay.Contains("Заповни схему це"))
+        {
+            termsDay.Remove("Заповни схему це");
+        }  
     }
     private void Loads()
     {
@@ -102,6 +112,7 @@ public class Learn : MonoBehaviour
         }
         else
         {
+            main.gameObject.SetActive(true);
             for (int i = 0; i < termsDay.Count; i++)
             {
                 string firstword = "";

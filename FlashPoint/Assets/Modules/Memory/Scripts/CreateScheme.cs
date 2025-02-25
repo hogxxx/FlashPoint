@@ -202,6 +202,6 @@ public class CreateScheme : MonoBehaviour
     {
         PlayerPrefs.SetInt("RealS", 0);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main");
     }
 }

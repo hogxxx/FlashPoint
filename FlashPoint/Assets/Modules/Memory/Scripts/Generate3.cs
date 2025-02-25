@@ -272,7 +272,7 @@ public class Generate3 : MonoBehaviour
         PlayerPrefs.SetInt("Repeat4", 0);
         PlayerPrefs.SetInt("Note4", 0);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main");
     }
     private void Add()
     {
@@ -280,7 +280,7 @@ public class Generate3 : MonoBehaviour
         PlayerPrefs.SetInt("Repeat4", 0);
         PlayerPrefs.SetInt("Note4", 0);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main");
     }
     private void SaveString()
     {

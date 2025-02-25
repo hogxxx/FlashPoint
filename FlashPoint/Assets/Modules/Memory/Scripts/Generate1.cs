@@ -257,7 +257,7 @@ public class Generate1 : MonoBehaviour
             PlayerPrefs.SetString("4Again2", termstring);
         }
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main");
     }
     private void Add()
     {
@@ -287,7 +287,7 @@ public class Generate1 : MonoBehaviour
             PlayerPrefs.SetString("4Again2", termstring);
         }
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main");
     }
     private void AddCorrect()
     {

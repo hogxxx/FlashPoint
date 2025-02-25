@@ -218,6 +218,14 @@ public class OrderClass : MonoBehaviour
     public static void LoadData(int num)
     {
         DistructWords.distructwords = distractingWords;
+        if (order.Count != 0)
+        {
+            order.Clear();
+        }
+        if (num != 0 && Learn.termsDay.Contains("Повтори: " + Physics[num - 1]))
+        {
+            Learn.termsDay.Remove("Повтори: " + Physics[num - 1]);
+        }
         order.Add(Physics[num]);
         FileManager.SaveOrder(order);
     }
