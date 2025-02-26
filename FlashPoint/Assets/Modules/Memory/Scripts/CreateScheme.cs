@@ -58,7 +58,32 @@ public class CreateScheme : MonoBehaviour
     public TextMeshProUGUI mesage;
     public Button backer;
     public List<Sprite> answers = new List<Sprite>();
-    public Image Mainanswer;
+    private Vector2[] positions1 =
+    {
+        new Vector2(-5.5f, 2.3708f),
+        new Vector2(-3.3f, 2.3708f),
+        new Vector2(-1.1f, 2.3708f),
+        new Vector2(1.1f, 2.3708f),
+        new Vector2(3.3f, 2.3708f),
+        new Vector2(5.5f, 2.3708f),
+        new Vector2(-5.5f, 1.26f),
+        new Vector2(-3.3f, 1.26f),
+        new Vector2(-1.1f, 1.26f),
+        new Vector2(1.1f, 1.26f),
+        new Vector2(3.3f, 1.26f),
+        new Vector2(5.5f, 1.26f),
+        new Vector2(-5.5f, 0.1492f),
+        new Vector2(-3.3f, 0.1492f),
+        new Vector2(-1.1f, 0.1492f),
+        new Vector2(1.1f, 0.1492f),
+        new Vector2(3.3f, 0.1492f),
+        new Vector2(5.5f, 0.1492f),
+    };
+    public List<Image> blocks1 = new List<Image>(9);
+    public List<Image> schemes1 = new List<Image>(9);
+    public TextMeshProUGUI[] texts1 = new TextMeshProUGUI[9];
+    public GameObject area1;
+    private List<Sprite> extra = new List<Sprite>();
     void Start()
     {
         order2 = new List<List<Sprite>>(){scheme1};
@@ -68,6 +93,7 @@ public class CreateScheme : MonoBehaviour
     {
         numer = PlayerPrefs.GetInt("NumScheme");
         List<Sprite> ordered = order2[numer];
+        extra = new List<Sprite>(order2[numer]);
         List<string> messages = order1[numer];
         count = ordered.Count;
         int count2 = count * 2;
@@ -185,7 +211,7 @@ public class CreateScheme : MonoBehaviour
         panel.gameObject.SetActive(true);
         mesage.text = "Правильно!";
         mesage.color = new Color(53f / 255f, 255f / 255f, 0f / 255f);
-        Mainanswer.sprite = answers[numer];
+        GenerateAnswer();
         backer.onClick.RemoveAllListeners();
         backer.onClick.AddListener(Continue);
     }
@@ -194,14 +220,67 @@ public class CreateScheme : MonoBehaviour
         panel.gameObject.SetActive(true);
         mesage.text = "Не правильно!";
         mesage.color = new Color(255f / 255f, 59f / 255f, 0f / 255f);
-        Mainanswer.sprite = answers[numer];
+        GenerateAnswer();
         backer.onClick.RemoveAllListeners();
         backer.onClick.AddListener(Continue);
+    }
+    private void GenerateAnswer()
+    {
+        List<Sprite> ordered = order2[numer];
+        List<string> messages = order1[numer];
+        int count2 = count * 2;
+        for (int i = 0; i < count2; i++)
+        {
+            GameObject areas = Instantiate(area1, GameObject.Find("Container2").transform);
+            RectTransform rectTransform = areas.GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = positions1[i];
+        }
+        for (int i = 0; i < count; i++)
+        {
+            blocks1[i].gameObject.SetActive(true);
+            blocks1[i].transform.SetAsLastSibling();
+            texts1[i].text = messages[i];
+            RectTransform blockRect = blocks1[i].GetComponent<RectTransform>();
+            if (i != 0)
+            {
+                blockRect.anchoredPosition = positions1[i * 2];
+            }
+            else
+            {
+                blockRect.anchoredPosition = positions1[i];
+            }
+            var blockact = blocks1[i].GetComponent<DragHandler>();
+            if (blockact != null)
+            {
+                blockact.enabled = false;
+            }
+        }
+        for (int i = 0; i < count; i++)
+        {
+            schemes1[i].gameObject.SetActive(true);
+            schemes1[i].transform.SetAsLastSibling();
+            schemes1[i].sprite = extra[i];
+            RectTransform schemeRect = schemes1[i].GetComponent<RectTransform>();
+            if ((i != 0))
+            {
+                schemeRect.anchoredPosition = positions1[i * 2 + 1];
+            }
+            else
+            {
+                schemeRect.anchoredPosition = positions1[i + 1];
+            }
+            var schemeact = schemes1[i].GetComponent<DragHandler>();
+            if (schemeact != null)
+            {
+                schemeact.enabled = false;
+            }
+        }
     }
     private void Continue()
     {
         PlayerPrefs.SetInt("RealS", 0);
         PlayerPrefs.Save();
+        Learn.DelScheme();
         SceneManager.LoadScene("Main");
     }
 }

@@ -101,7 +101,7 @@ public class Learn : MonoBehaviour
         if (termsDay.Count == 0 || termsDay.Contains(""))
         {
             main.gameObject.SetActive(false);
-            words.text = "Повторень на день немає!";
+            words.text = "Завдань на день немає!";
             words.alignment = TextAlignmentOptions.Center;
             float newheight = words.preferredHeight;
             wordsarea.sizeDelta = new Vector2(wordsarea.sizeDelta.x, newheight);

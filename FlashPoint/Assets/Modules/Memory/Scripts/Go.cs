@@ -34,7 +34,6 @@ public class Go : MonoBehaviour
        if (num == 1)
        {
             PlayerPrefs.SetInt("RealS", 0);
-            Learn.DelScheme();
         }
        else
        {
@@ -681,7 +680,7 @@ public class Go : MonoBehaviour
     }
     private IEnumerator Error()
     {
-        mes.text = "Очікуй повторень!";
+        mes.text = "Очікуй нових завдань!";
         mes.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         mes.gameObject.SetActive(false);
