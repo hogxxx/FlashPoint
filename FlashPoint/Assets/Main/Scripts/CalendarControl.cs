@@ -14,6 +14,9 @@ public class CalendarControl : MonoBehaviour
         if (!PlayerPrefs.HasKey("UnlockData"))
         {
             PlayerPrefs.SetInt("UnlockData", int.Parse(DateTime.Now.ToString("yyyyMMdd")));
+            Go.UpTime1();
+            Go.UpScheme();
+            BrainProject.UpTime();
         }
         if (!PlayerPrefs.HasKey("UnlockLevel"))
         {
