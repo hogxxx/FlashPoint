@@ -25,8 +25,6 @@ public class Go : MonoBehaviour
         CreatingKeys();
         CheckCorrectAnswers();
         CheckNotCorrectAnswers();
-        UpTime1(); /* Need Change Place!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-        UpScheme(); /* Need Change Place!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
         Checker();
     }
     public static void UpScheme()
