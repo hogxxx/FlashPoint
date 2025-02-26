@@ -7,7 +7,7 @@ using System;
 public class Learn : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static List<List<string>> weeks;
+    public static List<string> days;
     public TextMeshProUGUI main;
     public TextMeshProUGUI words;
     public RectTransform wordsarea;
@@ -15,40 +15,41 @@ public class Learn : MonoBehaviour
     public static List<string> terms1 = new List<string>();
     private List<string> terms2 = new List<string>();
     public static List<string> termsDay = new List<string>{""};
-    public static int updatevalue;
-    public static int chooser;
-    public static List<int> days = new List<int>(new int[7]);
-    private float requiretime1 = 86400f;
     public static string week;
     void Start()
     {
-        Generating();
-        Oneday();
         string terms = PlayerPrefs.GetString("Terms");
         string[] spliter = terms.Split(";");
         if (spliter.Length > 1)
         {
-            terms2 = new List<string>(terms.Split(";"));
+            List<string> orderTerms = new List<string>(terms.Split(";"));
+            foreach (var term in orderTerms)
+            {
+                terms2.Add("Повтори: " + term);
+            }
         }
         else if (!string.IsNullOrEmpty(terms) && spliter.Length == 1)
         {
             terms2 = new List<string>()
             {
-                terms
+                "Повтори: " + terms
             };
         }
         string terms1 = PlayerPrefs.GetString("Day0");
-        Debug.Log(terms1);
         string[] spliter1 = terms1.Split(";");
         if (spliter1.Length > 1)
         {
-            termsDay = new List<string>(terms1.Split(";"));
+            List<string> orderTerms = new List<string>(terms1.Split(";"));
+            foreach (var term in orderTerms)
+            {
+                termsDay.Add("Повтори: " + term);
+            }
         }
         else if (!string.IsNullOrEmpty(terms) && spliter.Length == 1)
         {
             termsDay = new List<string>()
             {
-                terms1
+                "Повтори: " + terms1
             };
         }
         else if(string.IsNullOrEmpty(terms1))
@@ -62,112 +63,42 @@ public class Learn : MonoBehaviour
                 termsDay.Add(term);
             }
         }
-        Debug.Log(string.Join(";", termsDay));
         Loads();
     }
     public static void Generating()
     {
-        weeks = FileManager.LoadTerms();
-        updatevalue = PlayerPrefs.GetInt("Updating");
-        chooser = PlayerPrefs.GetInt("Chooser");
-        if (!PlayerPrefs.HasKey("Week0") && updatevalue < chooser)
+        days = FileManager.LoadTerms();
+        if (days.Count != 0)
         {
-            Numbers();
-            terms1 = new List<string>(PlayerPrefs.GetString("Week0").Split(";"));
-            int termers = 0;
-            foreach (var term in terms1)
-            {
-                termers++;
-            }
-            int count1 = termers / 6;
-            int count2 = termers % 6;
-            if (count1 != 0 && count2 != 0)
-            {
-                for (int i = 0; i < 6; i++)
-                {
-                    days[i] = count1;
-                    if (count2 != 0)
-                    {
-                        days[i] += 1;
-                        count2--;
-                    }
-                }
-                days[6] = 0;
-            }
-            else if (count1 == 0)
-            {
-                for (int i = 0; i < days.Count; i++)
-                {
-                    if (count2 != 0)
-                    {
-                        days[i] = 1;
-                        count2--;
-                    }
-                    else
-                    {
-                        days[i] = 0;
-                    }
-                }
-            }
-            else if (count2 == 0)
-            {
-                for (int i = 0; i < 6; i++)
-                {
-                    days[i] = count1;
-                }
-                days[6] = 0;
-            }
-        }
-        week = PlayerPrefs.GetString("Week0");
-        if (!string.IsNullOrEmpty(week) && !PlayerPrefs.HasKey("RequireTime"))
-        {
-            terms1 = new List<string>(week.Split(";"));
-            int num = PlayerPrefs.GetInt("DayNum");
-            if (num == 0)
-            {
-                int num1 = days[num];
-                if (num1 != 0)
-                {
-                    termsDay = terms1.Take(num1).ToList();
-                    PlayerPrefs.SetInt("LastNum", days[num]);
-                }
-            }
-            else
-            {
-                int numlast = PlayerPrefs.GetInt("LastNum");
-                int num1 = days[num];
-                if (num1 != 0)
-                {
-                    termsDay = terms1.GetRange(numlast, num1);
-                    PlayerPrefs.SetInt("LastNum", days[num]);
-                }
-            }
-            if (termsDay.Count == 1)
-            {
-                string term = termsDay[0];
-                PlayerPrefs.SetString("Day0", term);
-            }
-            else
-            {
-                string termins = string.Join(";", termsDay);
-                PlayerPrefs.SetString("Day0", termins);
-            }
+            PlayerPrefs.SetString("Day0", days[0]);
             PlayerPrefs.Save();
+            foreach (var day in days)
+            {
+                if (!termsDay.Contains("Повтори: " + day))
+                {
+                    termsDay.Add("Повтори: " + day);
+                }
+            }
         }
         if (termsDay.Contains(""))
         {
             termsDay.Remove("");
         }
     }
-    public static void Numbers()
+    public static void AddScheme()
     {
-        string termins = string.Join(";", weeks[updatevalue]);
-        PlayerPrefs.SetString("Week0", termins);
-        PlayerPrefs.Save();
+        termsDay.Insert(0, "Заповни схему це");
+    }
+    public static void DelScheme()
+    {
+        if (termsDay.Contains("Заповни схему це"))
+        {
+            termsDay.Remove("Заповни схему це");
+        }  
     }
     private void Loads()
     {
-        if (updatevalue >= chooser || termsDay.Count == 0 || termsDay.Contains(""))
+        if (termsDay.Count == 0 || termsDay.Contains(""))
         {
             main.gameObject.SetActive(false);
             words.text = "Повторень на день немає!";
@@ -181,6 +112,7 @@ public class Learn : MonoBehaviour
         }
         else
         {
+            main.gameObject.SetActive(true);
             for (int i = 0; i < termsDay.Count; i++)
             {
                 string firstword = "";
@@ -214,46 +146,5 @@ public class Learn : MonoBehaviour
                 content.sizeDelta = new Vector2(content.sizeDelta.x, newheight);
             }
         }
-    }
-    private void Oneday()
-    {
-        if (PlayerPrefs.HasKey("RequireTime"))
-        {
-            string timers = PlayerPrefs.GetString("RequireTime");
-            DateTime lefttime;
-            if (DateTime.TryParse(timers, null, System.Globalization.DateTimeStyles.RoundtripKind, out lefttime))
-            {
-                TimeSpan usedtimes = DateTime.Now - lefttime;
-                if (usedtimes.TotalSeconds >= requiretime1)
-                {
-                    UpTime1();
-                }
-                else
-                {
-                    float enoughtime = (float)(requiretime1 - usedtimes.TotalSeconds);
-                    Invoke("UpTime1", enoughtime);
-                }
-            }
-        }
-        else if(updatevalue < chooser)
-        {
-            PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
-            PlayerPrefs.Save();
-            Oneday();
-        }
-    }
-    public void UpTime1()
-    {
-        PlayerPrefs.DeleteKey("RequireTime");
-        Generating();
-        PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
-        Oneday();
-        int num = PlayerPrefs.GetInt("DayNum");
-        num++;
-        if (num >= 6)
-        {
-            PlayerPrefs.SetInt("DayNum", num);
-        }
-        PlayerPrefs.Save();
     }
 }

@@ -9,10 +9,6 @@ using TMPro;
 public class Go : MonoBehaviour
 {
     public Button remember;
-    public Button terms;
-
-    private float requiretime = 604800f;
-    private float requiretime1 = 86400f;
     private float requiretime2 = 604800f;
     private float requiretime3 = 1209600f;
     private float requiretime4 = 1814400f;
@@ -23,32 +19,55 @@ public class Go : MonoBehaviour
     private string NotCorrectRrepetition2;
     private string NotCorrectkey2;
     private string repetitions;
-    private int chooser;
     void Awake()
     {
         Screen.orientation = ScreenOrientation.Portrait;
         CreatingKeys();
-        Weeker();
         CheckCorrectAnswers();
         CheckNotCorrectAnswers();
-        GenerateDayList();
-        Oneday();
+        UpTime1(); /* Need Change Place!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+        UpScheme(); /* Need Change Place!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
         Checker();
     }
-    void Start()
+    public static void UpScheme()
     {
-        terms.onClick.AddListener(Terms);
+       OrderClass.UpdateScheme();
+       int num = PlayerPrefs.GetInt("NumScheme");
+       if (num == 1)
+       {
+            PlayerPrefs.SetInt("RealS", 0);
+            Learn.DelScheme();
+        }
+       else
+       {
+            PlayerPrefs.SetInt("RealS", 1);
+            Learn.AddScheme();
+        }
+       PlayerPrefs.Save();
     }
-    private void CreatingKeys()
+    public static void UpTime1()
+    {
+        CheckNum();
+        int num = PlayerPrefs.GetInt("DayNum");
+        num++;
+        if (num <= 29)
+        {
+            PlayerPrefs.SetInt("DayNum", num);
+            PlayerPrefs.Save();
+            OrderClass.LoadData(num);
+        }
+        Learn.Generating();
+    }
+    private static void CheckNum()
     {
         if (!PlayerPrefs.HasKey("DayNum"))
         {
-            PlayerPrefs.SetInt("DayNum", 0);
+            PlayerPrefs.SetInt("DayNum", -1);
+            PlayerPrefs.Save();
         }
-        if (!PlayerPrefs.HasKey("Updating"))
-        {
-            PlayerPrefs.SetInt("Updating", 0);
-        }
+    }
+    private void CreatingKeys()
+    {
         if (!PlayerPrefs.HasKey("Note"))
         {
             PlayerPrefs.SetInt("Note", 0);
@@ -146,74 +165,6 @@ public class Go : MonoBehaviour
             PlayerPrefs.SetString("AllKeysCheck2", "");
         }
         PlayerPrefs.Save();
-    }
-    private void GenerateDayList()
-    {
-        Learn.Generating();
-    }
-    private void Oneday()
-    {
-        if (PlayerPrefs.HasKey("RequireTime"))
-        {
-            string timers = PlayerPrefs.GetString("RequireTime");
-            DateTime lefttime;
-            if (DateTime.TryParse(timers, null, System.Globalization.DateTimeStyles.RoundtripKind, out lefttime))
-            {
-                TimeSpan usedtimes = DateTime.Now - lefttime;
-                if (usedtimes.TotalSeconds >= requiretime1)
-                {
-                    UpTime1();
-                }
-                else
-                {
-                    float enoughtime = (float)(requiretime1 - usedtimes.TotalSeconds);
-                    Invoke("UpTime1", enoughtime);
-                }
-            }
-        }
-        else
-        {
-            PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
-            PlayerPrefs.Save();
-            Oneday();
-        }
-    }
-    private /*async*/ void Weeker()
-    {
-        if (PlayerPrefs.HasKey("Week7"))
-        {
-
-            /* await Notification.SendNotification("Memory", "З'явилися нові терміни для повторень на тиждень!", requiretime); */
-            string timers = PlayerPrefs.GetString("Week7");
-            DateTime lefttime;
-            if (DateTime.TryParse(timers, null, System.Globalization.DateTimeStyles.RoundtripKind, out lefttime))
-            {
-                TimeSpan usedtimes = DateTime.Now - lefttime;
-                if (usedtimes.TotalSeconds >= requiretime)
-                {
-                    UpTime();
-                }
-                else
-                {
-                    float enoughtime = (float)(requiretime - usedtimes.TotalSeconds);
-                    Invoke("UpTime", enoughtime);
-                }
-            }
-        }
-        else
-        {
-            int countWeek = PlayerPrefs.GetInt("Updating");
-            chooser = PlayerPrefs.GetInt("Chooser");
-            Debug.Log(countWeek);
-            Debug.Log(chooser);
-            if (countWeek < chooser)
-            {
-                PlayerPrefs.SetString("Week7", System.DateTime.Now.ToString("o"));
-                PlayerPrefs.SetInt("DayNum", 0);
-                PlayerPrefs.Save();
-                Weeker();
-            }
-        }
     }
     private void CheckCorrectAnswers()
     {
@@ -654,8 +605,6 @@ public class Go : MonoBehaviour
     }
     private void Checker()
     {
-        int updatingValue = PlayerPrefs.GetInt("Updating");
-        
         string value2Again1 = PlayerPrefs.GetString("2Again1");
         string value1Again = PlayerPrefs.GetString("1Again");
         string value2Agains = PlayerPrefs.GetString("2Agains");
@@ -669,9 +618,13 @@ public class Go : MonoBehaviour
         string value4_3Again = PlayerPrefs.GetString("4Again3");
         string value4_4Again = PlayerPrefs.GetString("4Again4");
         string termsonday = PlayerPrefs.GetString("Day0");
+        int NeedScheme = PlayerPrefs.GetInt("RealS");
         remember.onClick.RemoveAllListeners();
-
-        if (!string.IsNullOrEmpty(value2Again1))
+        if (NeedScheme == 1)
+        {
+            remember.onClick.AddListener(Load1);
+        }
+        else if (!string.IsNullOrEmpty(value2Again1))
         {
             remember.onClick.AddListener(Load1);
         }
@@ -707,11 +660,11 @@ public class Go : MonoBehaviour
         {
             remember.onClick.AddListener(Load4);
         }
-        else if (updatingValue < 3 && !string.IsNullOrEmpty(termsonday))
+        else if (!string.IsNullOrEmpty(termsonday))
         {
             remember.onClick.AddListener(Load1);
         }
-        else if (updatingValue > 2 || string.IsNullOrEmpty(termsonday))
+        else if (string.IsNullOrEmpty(termsonday))
         {
             remember.onClick.AddListener(Message);
         }
@@ -741,31 +694,6 @@ public class Go : MonoBehaviour
         mes.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         mes.gameObject.SetActive(false);
-    }
-    public void UpTime()
-    {
-        PlayerPrefs.DeleteKey("Week0");
-        PlayerPrefs.DeleteKey("Week7");
-        int num = PlayerPrefs.GetInt("Updating");
-        num++;
-        PlayerPrefs.SetInt("Updating", num);
-        PlayerPrefs.Save();
-        Weeker();
-    }
-    public void UpTime1()
-    {
-        PlayerPrefs.DeleteKey("RequireTime");
-        GenerateDayList();
-        PlayerPrefs.SetString("RequireTime", System.DateTime.Now.ToString("o"));
-        Oneday();
-        int num = PlayerPrefs.GetInt("DayNum");
-        num++;
-        if (num >= 6)
-        {
-            PlayerPrefs.SetInt("DayNum", num);
-        }
-        PlayerPrefs.Save();
-        Checker();
     }
     public void Load1()
     {

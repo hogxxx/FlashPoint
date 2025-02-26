@@ -9,55 +9,26 @@ using System.IO;
 using System.Security.Cryptography;
 public class BrainProject : MonoBehaviour
 {
-    private float requiretime1 = 86400f;
     public Button start;
     public TextMeshProUGUI mes;
     void Start()
     {
         Screen.orientation = ScreenOrientation.Portrait;
-        CheckDayOne();
-        CreateCount();
+        UpTime(); /* Change Place!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
         Checker();
     }
-    private void CheckDayOne()
+    public static void UpTime()
     {
-        if (PlayerPrefs.HasKey("Day1"))
-        {
-            string fixtime = PlayerPrefs.GetString("Day1");
-            DateTime leftTime;
-            if(DateTime.TryParse(fixtime,null,System.Globalization.DateTimeStyles.RoundtripKind,out leftTime))
-            {
-                TimeSpan needTime = DateTime.Now - leftTime;
-                if(needTime.TotalSeconds >= requiretime1)
-                {
-                    UpTime();
-                }
-                else
-                {
-                    float enoughTime = (float)(requiretime1 - needTime.TotalSeconds);
-                    Invoke("UpTime", enoughTime);
-                }
-            }
-        }
-    }
-    private void UpTime()
-    {
-        PlayerPrefs.DeleteKey("Day1");
-        PlayerPrefs.Save();
+        CountDay.CheckNum();
         int day1 = CountDay.LoadInter();
         day1 += 6;
         CountDay.SaveInter(day1);
     }
-    private void CreateCount()
-    {
-        CountDay.CheckNum();
-    }
     private void Checker()
     {
-        bool check = !PlayerPrefs.HasKey("Day1");
         int count = CountDay.LoadInter();
         start.onClick.RemoveAllListeners();
-        if (check && count < 49)
+        if (count < 181)
         {
             start.onClick.AddListener(Starter);
         }
@@ -93,7 +64,7 @@ public static class CountDay
         if (!File.Exists(filepath))
         {
             InitializeFile();
-            SaveInter(6);
+            SaveInter(0);
         }
     }
     public static void SaveInter(int num)

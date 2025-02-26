@@ -159,8 +159,6 @@ public class Training : MonoBehaviour
     }
     private void Back()
     {
-        SceneManager.LoadScene("Properties");
-        PlayerPrefs.SetString("Day1", System.DateTime.Now.ToString("o"));
-        PlayerPrefs.Save();
+        SceneManager.LoadScene("Main");
     }
 }

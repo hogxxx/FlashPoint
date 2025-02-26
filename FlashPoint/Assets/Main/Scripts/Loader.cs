@@ -12,9 +12,5 @@ public class Loader : MonoBehaviour
         {
             SceneManager.LoadScene("Class");
         }
-        else if (!PlayerPrefs.HasKey("Object"))
-        {
-            SceneManager.LoadScene("Objects");
-        }
     }
 }
