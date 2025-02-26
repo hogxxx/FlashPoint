@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainControl : MonoBehaviour
+public class Loader : MonoBehaviour
 {
   
     void Start()

@@ -3460,6 +3460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 647722704}
   - component: {fileID: 647722705}
+  - component: {fileID: 647722706}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3546,6 +3547,18 @@ MonoBehaviour:
   MissionAplyButton: {fileID: 1321426568}
   ProfileEnterButton: {fileID: 468395672}
   ProfileExitButton: {fileID: 935520920}
+--- !u!114 &647722706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647722703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a1415928aa0554b92ecdc26a7c074a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &659148677
 GameObject:
   m_ObjectHideFlags: 0

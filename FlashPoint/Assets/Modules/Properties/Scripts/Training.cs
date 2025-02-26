@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEditor.VersionControl;
 using Unity.VisualScripting;
 public class Training : MonoBehaviour
 {
