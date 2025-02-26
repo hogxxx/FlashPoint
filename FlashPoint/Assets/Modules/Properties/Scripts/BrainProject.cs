@@ -14,7 +14,6 @@ public class BrainProject : MonoBehaviour
     void Start()
     {
         Screen.orientation = ScreenOrientation.Portrait;
-        UpTime(); /* Change Place!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
         Checker();
     }
     public static void UpTime()
