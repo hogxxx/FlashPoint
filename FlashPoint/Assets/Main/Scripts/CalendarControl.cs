@@ -28,6 +28,9 @@ public class CalendarControl : MonoBehaviour
             if (int.Parse(DateTime.Now.ToString("yyyyMMdd")) > PlayerPrefs.GetInt("UnlockData"))
             {
                 PlayerPrefs.SetInt("AccessibleLevel", PlayerPrefs.GetInt("UnlockLevel"));
+                Go.UpTime1();
+                Go.UpScheme(); 
+                BrainProject.UpTime();
             }
         }
         for (int i = 0; i < BlockDayButton.Length; i++)
