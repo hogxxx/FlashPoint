@@ -31,7 +31,7 @@ public class Go : MonoBehaviour
     {
        OrderClass.UpdateScheme();
        int num = PlayerPrefs.GetInt("NumScheme");
-       if (num == 1)
+       if (num == 3)
        {
             PlayerPrefs.SetInt("RealS", 0);
         }

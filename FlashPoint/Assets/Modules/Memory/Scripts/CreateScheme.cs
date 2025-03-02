@@ -46,9 +46,29 @@ public class CreateScheme : MonoBehaviour
             "електрична лампа",
             "плавкий запоб≥жник",
             "реостат"
+        },
+        new List<string>
+        {
+            "нервова система",
+            "органи чутт€",
+            "шк≥ра",
+            "вид≥льна система",
+            "травна система",
+            "дихальна система"
+        },
+        new List<string>
+        {
+            "зал≥зний м≥ст",
+            "м≥сто",
+            "р≥дкий л≥с",
+            "€р",
+            "сад",
+            "урвище"
         }
     };
     public List<Sprite> scheme1 = new List<Sprite>();
+    public List<Sprite> scheme2 = new List<Sprite>();
+    public List<Sprite> scheme3 = new List<Sprite>();
     private List<List<Sprite>> order2;
     private List<GameObject> dropareas = new List<GameObject>();
     private int count;
@@ -86,7 +106,7 @@ public class CreateScheme : MonoBehaviour
     private List<Sprite> extra = new List<Sprite>();
     void Start()
     {
-        order2 = new List<List<Sprite>>(){scheme1};
+        order2 = new List<List<Sprite>>(){scheme1,scheme2,scheme3};
         GenerateTask();
     }
     private void GenerateTask()

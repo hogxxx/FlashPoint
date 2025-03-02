@@ -8310,6 +8310,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2e8685171404ef649945cdeef3c7d100, type: 3}
   - {fileID: 21300000, guid: 64c858edd59cd524e884a4160c1e5363, type: 3}
   - {fileID: 21300000, guid: 24405360737326d4182ca1554c8ebeb4, type: 3}
+  scheme2:
+  - {fileID: 21300000, guid: 2a474beb58df0074ea35cd4d2339906d, type: 3}
+  - {fileID: 21300000, guid: 36dce58c0aa04174c8d4fb8b8be93996, type: 3}
+  - {fileID: 21300000, guid: e2d319ac4fb14524494398d82a695344, type: 3}
+  - {fileID: 21300000, guid: b706fb91519114942ae8ae7513ecf9aa, type: 3}
+  - {fileID: 21300000, guid: a647512ce86e29e4098a917ef655d69b, type: 3}
+  - {fileID: 21300000, guid: 2b0b84659820800498bf79557107c88d, type: 3}
+  scheme3:
+  - {fileID: 21300000, guid: 4cda4f388df7e934280b39575a030c13, type: 3}
+  - {fileID: 21300000, guid: 4cdd06f7fef450d4ea006c2c5c3556ec, type: 3}
+  - {fileID: 21300000, guid: cf2ff774e13cc3442bd684fc1c0bc492, type: 3}
+  - {fileID: 21300000, guid: c7852195413ae534f9e390ee210941d4, type: 3}
+  - {fileID: 21300000, guid: d3e2550cf7dde8f429f6175e3bcfaea5, type: 3}
+  - {fileID: 21300000, guid: edd22b60780a907468dc4b8d6ee97f29, type: 3}
   panel: {fileID: 695577081}
   mesage: {fileID: 2012268235}
   backer: {fileID: 895488482}

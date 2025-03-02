@@ -237,7 +237,7 @@ public class OrderClass : MonoBehaviour
             PlayerPrefs.Save();
         }
         int num = PlayerPrefs.GetInt("NumScheme");
-        if (num < 1)
+        if (num < 3)
         {
             num++;
             PlayerPrefs.SetInt("NumScheme", num);
